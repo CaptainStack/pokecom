@@ -7,4 +7,5 @@ module.exports = app => {
 
   app.post('/api/posts', postsController.create);
   app.get('/api/posts', postsController.list);
+  app.get('/api/posts/:postId', postsController.find);
 };
