@@ -20,5 +20,21 @@ module.exports = {
       .findById(request.params.postId)
       .then(post => !post ? response.status(404).send({ message: 'Post Not Found'}) : response.status(200).send(post))
       .catch(error => response.status(400).send(error));
-  }
+  },
+  destroy(request, response) {
+    return Post
+      .findById(request.params.postId)
+      .then(post => {
+        if (!post) {
+          return response.status(400).send({
+            message: 'Post Not Found',
+          });
+        }
+        return post
+          .destroy()
+          .then(() => response.status(200).send({ message: 'Post deleted successfully.' }))
+          .catch(error => response.status(400).send(error));
+      })
+      .catch(error => response.status(400).send(error));
+  },
 };
