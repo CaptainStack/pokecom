@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CaptainStack/pokecom/issues"
   },
-  "homepage": "https://github.com/CaptainStack/pokecom#readme"
+  "homepage": "https://github.com/CaptainStack/pokecom#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
