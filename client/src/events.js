@@ -28,7 +28,7 @@ export const create_post_button_clicked = post_content => event => {
     },
     body: JSON.stringify({
       content: post_content
-    })})
+  })})
   .then(response => response.json())
   .then(created_post => {
     store.dispatch({ type: 'CREATE_NEW_POST', post: created_post });
