@@ -1,6 +1,6 @@
 # Technical Assessment
 
-We’re so excited about your interest in joining the Pluralsight engineering team! 
+We’re so excited about your interest in joining the Pluralsight engineering team!
 
 This next part of your interview process is a technical assessment for you to complete and return within one week. Being an engineer is more than just writing as many lines of code as you can — it’s about problem solving, communication, and leveraging the right tools for the job. We’re excited to see what you can do.
 
