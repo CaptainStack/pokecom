@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import { store } from './index'
 
 class App extends Component {
-  state = {posts: []}
-
   componentDidMount() {
     fetch('/api/posts')
       .then(res => res.json())
-      .then(posts => this.setState({ posts }));
+      .then(posts => store.dispatch({ type: 'UPDATE_POSTS_LIST', posts: posts }));
   }
 
   render() {
+    let posts = this.props.state.posts.map(post =><li key={ post.id }>{ post.content }</li>);
     return (
       <div className="App">
         <header>
@@ -18,9 +18,7 @@ class App extends Component {
         </header>
         <h2>Posts</h2>
         <ul>
-        {this.state.posts.map(post =>
-          <li key={post.id}>{post.content}</li>
-        )}
+          {posts}
         </ul>
       </div>
     );
