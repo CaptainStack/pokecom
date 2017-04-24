@@ -1,13 +1,26 @@
+const http_request = require('request');
 const Post = require('../models').Post;
 
 module.exports = {
   create(request, response) {
-    return Post
-      .create({
-        content: request.body.content,
-      })
-      .then(post => response.status(201).send(post))
-      .catch(error => response.status(400).send(error));
+    let pokemon_id = Math.floor(Math.random() * 721) + 1;
+    console.log(`Request url: http://pokeapi.co/api/v2/pokemon/${pokemon_id}`);
+    http_request(`http://pokeapi.co/api/v2/pokemon/${pokemon_id}`, (error, res, body) => {
+      let pokemon = JSON.parse(body);
+      console.log(JSON.stringify(res));
+      if (!error && res.statusCode == 200) {
+        console.log(pokemon.forms[0].name);
+        return Post
+          .create({
+            content: request.body.content,
+            pokemon: pokemon.forms[0].name
+          })
+          .then(post => response.status(201).send(post))
+          .catch(error => response.status(400).send(error));
+      } else {
+        console.log('Error reaching the Pokemon API.');
+      }
+    });
   },
   list(request, response) {
     return Post
