@@ -6,7 +6,6 @@ module.exports = {
     let pokemon_id = Math.floor(Math.random() * 721) + 1;
     http_request(`http://pokeapi.co/api/v2/pokemon/${pokemon_id}`, (error, res, body) => {
       let pokemon = JSON.parse(body);
-      console.log(JSON.stringify(res));
       if (!error && res.statusCode == 200) {
         return Post
           .create({
