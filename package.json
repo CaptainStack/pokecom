@@ -1,0 +1,20 @@
+{
+  "name": "pokecom",
+  "version": "1.0.0",
+  "description": "We’re so excited about your interest in joining the Pluralsight engineering team!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainStack/pokecom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainStack/pokecom/issues"
+  },
+  "homepage": "https://github.com/CaptainStack/pokecom#readme"
+}
