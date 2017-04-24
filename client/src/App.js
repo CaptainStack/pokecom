@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { store } from './index'
+import { Post } from './components/Post';
+import { delete_post_button_clicked } from './events';
 
 class App extends Component {
   componentDidMount() {
@@ -10,7 +12,9 @@ class App extends Component {
   }
 
   render() {
-    let posts = this.props.state.posts.map(post =><li key={ post.id }>{ post.content }</li>);
+    let posts = this.props.state.posts.map(
+      post => <Post key={ post.id } post={ post } delete_button_action={ delete_post_button_clicked(post) } />
+    );
     return (
       <div className="App">
         <header>
