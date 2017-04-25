@@ -14,7 +14,7 @@ export const delete_post = (state, post) => {
 }
 
 export const create_new_post = (state, created_post) => {
-  state.posts.push(created_post);
+  state.posts.unshift(created_post);
   state.post_form_content = '';
   return state;
 }

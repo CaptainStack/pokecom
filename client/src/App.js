@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import { store } from './index'
 import { delete_post_button_clicked } from './events';
 import { Post } from './components/Post';
 import { NewPostForm } from './components/NewPostForm';
+import { Newsfeed } from './components/Newsfeed';
 
 class App extends Component {
   componentDidMount() {
@@ -19,11 +20,10 @@ class App extends Component {
     return (
       <div className="App">
         <header><h1>Pokecom</h1></header>
-        <h2>Posts</h2>
-        <ul>
-          {posts}
-        </ul>
-        <NewPostForm form_content={ this.props.state.post_form_content }/>
+        <div className='main-content'>
+          <NewPostForm form_content={ this.props.state.post_form_content }/>
+          <Newsfeed posts={posts}/>
+        </div>
       </div>
     );
   }

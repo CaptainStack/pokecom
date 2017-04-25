@@ -21,7 +21,7 @@ module.exports = {
   },
   list(request, response) {
     return Post
-      .all()
+      .all({ limit: 10, order: '"updatedAt" DESC' })
       .then(posts => response.status(200).send(posts))
       .catch(error => response.status(400).send(error));
   },
