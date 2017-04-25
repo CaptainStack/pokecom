@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import { store } from './index'
 import { delete_post_button_clicked } from './events';
 import { Post } from './components/Post';
