@@ -1,4 +1,4 @@
-import { update_posts_list, delete_post, create_new_post, update_post_form_content, INITIAL_STATE } from './core';
+import { update_posts_list, delete_post, create_new_post, update_post_form_content, INITIAL_STATE } from './actions';
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
