@@ -4,12 +4,9 @@ const Post = require('../models').Post;
 module.exports = {
   create(request, response) {
     let pokemon_id = Math.floor(Math.random() * 721) + 1;
-    console.log(`Request url: http://pokeapi.co/api/v2/pokemon/${pokemon_id}`);
     http_request(`http://pokeapi.co/api/v2/pokemon/${pokemon_id}`, (error, res, body) => {
       let pokemon = JSON.parse(body);
-      console.log(JSON.stringify(res));
       if (!error && res.statusCode == 200) {
-        console.log(pokemon.forms[0].name);
         return Post
           .create({
             content: request.body.content,
