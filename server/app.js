@@ -8,7 +8,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./server/routes')(app);
+require('./routes')(app);
 app.get('*', (request, response) => response.status(200).send({
   message: 'Success'
 }));
